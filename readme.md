@@ -1,4 +1,4 @@
-learn_re: 
-learn_requests:  
-learn_time: 
-learn_tornado: 
+learn_re
+learn_requests
+learn_time
+learn_tornado
