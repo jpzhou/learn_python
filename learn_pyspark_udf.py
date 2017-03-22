@@ -26,3 +26,11 @@ schemaPeople = sqlContext.createDataFrame(people)
 # write text data
 schemaPeople.write.text('/tmp/test_person_score_txt')
 
+# create empty dataFrame from schema
+emptySchema = sqlContext.createDataFrame([], schemaPeople.schema)
+emptySchema.registerTempTable('emptySchemaTable')
+sqlContext.sql('create table db_name.tb_name partitioned by (batch_id STRING) as select * from emptySchemaTable')
+
+
+
+
